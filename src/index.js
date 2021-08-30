@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 // test1 
-// import { requestGithubUser } from './js/test1';
+// import { authRequest } from './js/test1';
 
 
 ReactDOM.render(
@@ -15,3 +15,4 @@ ReactDOM.render(
 
 // requestGithubUser('bluesatch');
 
+// authRequest('bluesatch', 'blkc0des')

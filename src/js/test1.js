@@ -17,20 +17,35 @@
 // }
 
 /* sending data with a request */
-fetch('/create/user', {
-    method: "POST",
-    body: JSON.stringify({ username, password, bio })
-});
+// fetch('/create/user', {
+//     method: "POST",
+//     body: JSON.stringify({ username, password, bio })
+// });
 /* sending data with a request */
 
 /* uploading files with fetch */
-const formData = new FormData();
-formData.append('username', 'moontahoe');
-formData.append('fullname', 'Alex Banks');
-formData.append('avatar', imgFile);
+// const formData = new FormData();
+// formData.append('username', 'moontahoe');
+// formData.append('fullname', 'Alex Banks');
+// formData.append('avatar', imgFile);
 
-fetch('create/user', {
-    method: "POST",
-    body: formData
-})
+// fetch('create/user', {
+//     method: "POST",
+//     body: formData
+// })
 /* uploading files with fetch */
+
+/* authorized requests*/
+
+export const authRequest =(login, token)=> {
+    fetch(`https://api.github.com/users/${login}`,
+    {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    });
+}
+
+
+/* authorized requests */
