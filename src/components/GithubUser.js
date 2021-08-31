@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-const loadJSON = key => {
-    key && JSON.parse(localStorage.getItem(key));
-}
+// const loadJSON = key => {
+//     key && JSON.parse(localStorage.getItem(key));
+// }
 
-const saveJSON =(key, data)=> {
-    localStorage.setItem(key, JSON.stringify(data));
-}
+// const saveJSON =(key, data)=> {
+//     localStorage.setItem(key, JSON.stringify(data));
+// }
 
 
 

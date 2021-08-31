@@ -13,3 +13,10 @@ body {
   border: 3px solid dodgerblue;
 
 }
+
+.list {
+  margin: 40px auto;
+  width: 55%;
+  background-color: whitesmoke;
+  border: 3px solid dodgerblue;
+}
