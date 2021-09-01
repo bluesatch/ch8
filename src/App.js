@@ -1,9 +1,9 @@
-import React from 'react';
-// import GithubUser from './components/GithubUser';
-import List from './components/List';
+import React, { useState } from 'react';
+import GithubUser from './components/GithubUser';
+// import List from './components/List';
 // import { tahoe_peaks } from './App2';
-import { bigList } from './data/bigList'
-import {FixedSizeList } from 'react-window';
+// import { bigList } from './data/bigList'
+// import {FixedSizeList } from 'react-window';
 import './App.css'
 
 
@@ -16,23 +16,24 @@ function App() {
   //       {item.name} - {item.email}
   //     </p>
   //   </div>
-  const renderRow = ({ index, style })=> (
-    <div style={{ ...style, ...{display: "flex" }}}>
-      <img 
-        src={bigList[index].avatar}
-        alt={bigList[index].name}
-        width={50}
-      />
-      <p>
-        {bigList[index].name} - {bigList[index].email}
-      </p>
-    </div>
-  )
-  
+  // const renderRow = ({ index, style })=> (
+  //   <div style={{ ...style, ...{display: "flex" }}}>
+  //     <img 
+  //       src={bigList[index].avatar}
+  //       alt={bigList[index].name}
+  //       width={50}
+  //     />
+  //     <p>
+  //       {bigList[index].name} - {bigList[index].email}
+  //     </p>
+  //   </div>
+  // )
+  const [login, setLogin] = useState('bluesatch')
+
   return (
       <div>
         <h1>Satch-Chapter 8</h1>
-        {/* <GithubUser login="bluesatch" /> */}
+        <GithubUser login={login} />
         {/* <List 
           data={tahoe_peaks}
           renderEmpty={<p>This list is empty.</p>} 
@@ -45,14 +46,14 @@ function App() {
         {/* <List 
           data={bigList} renderItem={renderItem} />
  */}
-        <FixedSizeList 
+        {/* <FixedSizeList 
           height={window.innerHeight}
           width={window.innerWidth - 20}
           itemCount={bigList.length}
           itemSize={50}
         >
           {renderRow}
-        </FixedSizeList>
+        </FixedSizeList> */}
       </div>
   );
 }
