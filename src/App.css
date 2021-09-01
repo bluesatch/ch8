@@ -20,3 +20,18 @@ body {
   background-color: whitesmoke;
   border: 3px solid dodgerblue;
 }
+
+.buttonDiv {
+  display: flex;
+  justify-content: space-around;
+}
+
+.githubImg {
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.dataInfo {
+  text-align: center;
+}
