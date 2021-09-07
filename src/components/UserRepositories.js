@@ -4,7 +4,9 @@ import RepoMenu from './RepoMenu';
 
 const UserRepositories =({
     login,
-    selectedRepo,
+    repo,
+    // selectedRepo,
+    selected,
     onSelect = f => f
 })=> {
     return (
@@ -13,10 +15,9 @@ const UserRepositories =({
             renderSuccess={({ data }) => (
                 <RepoMenu
                     repositories={data}
-                    selectedRepo={selectedRepo}
-                    onSelect={onSelect}
-                />
-            )}
+                    selected={repo}
+                    onSelect={onSelect} /> )}
+            
         />
     )
 }

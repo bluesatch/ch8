@@ -1,5 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState} from 'react';
 import GithubUser from './components/GithubUser';
+import UserRepositories from './components/UserRepositories';
+import RepositoryReadMe from './components/RepositoryReadMe';
+import SearchForm from './components/SearchForm';
 // import List from './components/List';
 // import { tahoe_peaks } from './App2';
 // import { bigList } from './data/bigList'
@@ -29,15 +32,27 @@ function App() {
   //   </div>
   // )
   const [login, setLogin] = useState('bluesatch')
-  const loginInput = useRef(null);
+  const [repo, setRepo] = useState('2019lessons');
+  // const loginInput = useRef(null);
 
-  const submit = e => {
-    e.preventDefault();
-    console.log(e.target[0].value)
-    let newLogin = login
-    newLogin =  e.target[0].value;
-    setLogin(newLogin);
-  }
+  const handleSearch = login => {
+    if (login) return setLogin(login);
+    setLogin('');
+    setRepo('');
+  };
+
+  if (!login) 
+    return (
+      <SearchForm value={login} onSearch={handleSearch} />
+    )
+
+  // const submit = e => {
+  //   e.preventDefault();
+  //   console.log(e.target[0].value)
+  //   let newLogin = login
+  //   newLogin =  e.target[0].value;
+  //   setLogin(newLogin);
+  // }
 
   
   
@@ -48,7 +63,7 @@ function App() {
   return (
       <div>
         <h1>Satch-Chapter 8</h1>
-        <form onSubmit={submit}>
+        {/* <form onSubmit={submit}>
           <input
             ref={loginInput}
             type="text"
@@ -56,8 +71,20 @@ function App() {
             required
           />
           <button>Search</button>
-        </form>
+        </form> */}
+        <SearchForm value={login} onSearch={handleSearch} />
         <GithubUser login={login} />
+        {/* {login && <GithubUser login={login} />} */}
+        
+          <UserRepositories
+            login={login}
+            repo={repo}
+            onSelect={setRepo}
+          />
+        
+    
+          <RepositoryReadMe login={login} repo={repo} />
+      
         {/* <List 
           data={tahoe_peaks}
           renderEmpty={<p>This list is empty.</p>} 
